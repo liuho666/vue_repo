@@ -1,0 +1,212 @@
+{
+  "id": "1942857",
+  "name": "电力运维云平台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "435928",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e7b8",
+      "unicode_decimal": 59320
+    },
+    {
+      "icon_id": "13604677",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "5121503",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "7712214",
+      "name": "权限",
+      "font_class": "quanxian1",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "392103",
+      "name": "电脑",
+      "font_class": "93",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "1232390",
+      "name": "电脑",
+      "font_class": "diannao",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "1471043",
+      "name": "电器",
+      "font_class": "dianqi",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "1486808",
+      "name": "电器",
+      "font_class": "dianqi1",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "2150378",
+      "name": "电",
+      "font_class": "electricity_icon",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "2486584",
+      "name": "电源",
+      "font_class": "dianyuan",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3865221",
+      "name": "电池",
+      "font_class": "dianchi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5387412",
+      "name": "电表",
+      "font_class": "dianbiao",
+      "unicode": "eacb",
+      "unicode_decimal": 60107
+    },
+    {
+      "icon_id": "5650484",
+      "name": "电脑",
+      "font_class": "icon-test",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "6319087",
+      "name": "电线",
+      "font_class": "dianxian",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "6901793",
+      "name": "电",
+      "font_class": "dian",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "9557786",
+      "name": "电子",
+      "font_class": "dianzi",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "11261627",
+      "name": "电厂",
+      "font_class": "bianzu",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "12259428",
+      "name": "电池",
+      "font_class": "icon-test1",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "13638685",
+      "name": "电",
+      "font_class": "dian1",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "14004091",
+      "name": "电气",
+      "font_class": "dianqi2",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "15734032",
+      "name": "导航栏图标_营销",
+      "font_class": "daohanglantubiao_yingxiao",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "15734035",
+      "name": "导航栏图标_系统管理",
+      "font_class": "daohanglantubiao_xitongguanli",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "15734038",
+      "name": "导航栏图标_综合",
+      "font_class": "daohanglantubiao_zonghe",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "15734550",
+      "name": "导航栏图标_基础数据",
+      "font_class": "daohanglantubiao_jichushuju",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "15734552",
+      "name": "导航栏图标_活动",
+      "font_class": "daohanglantubiao_huodong",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "15734560",
+      "name": "导航栏图标_营销",
+      "font_class": "daohanglantubiao_yingxiao1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "15734941",
+      "name": "导航栏图标_首页",
+      "font_class": "daohanglantubiao_shouye",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "15734029",
+      "name": "导航栏图标_设备",
+      "font_class": "daohanglantubiao_shebei",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "15734030",
+      "name": "导航栏图标_统计",
+      "font_class": "daohanglantubiao_tongji",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}
