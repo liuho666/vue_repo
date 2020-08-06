@@ -8,69 +8,29 @@
         </el-breadcrumb>
 
 
-
-        <span class="demonstration">变配电站名称：</span>
-        <el-input v-model="input" placeholder="全部" style="width: 150px"></el-input>
-
-        <el-button type="primary" icon="el-icon-search" style="margin-left: 15px"></el-button>
-
-        <span class="demonstration">排序字段：</span>
-        <el-dropdown>
-            <el-button >
-                请选择<i class="el-icon-arrow-down el-icon--right" ></i>
-            </el-button>
-            <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>负荷率</el-dropdown-item>
-                <el-dropdown-item>温度</el-dropdown-item>
-                <el-dropdown-item>功率因数</el-dropdown-item>
-                <el-dropdown-item>有功功率</el-dropdown-item>
-                <el-dropdown-item>视在功率</el-dropdown-item>
-            </el-dropdown-menu>
-        </el-dropdown>
-
-
-
-        <span class="demonstration">排序方式：</span>
-        <el-dropdown>
-            <el-button >
-                请选择<i class="el-icon-arrow-down el-icon--right" ></i>
-            </el-button>
-            <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>升序</el-dropdown-item>
-                <el-dropdown-item>倒序</el-dropdown-item>
-            </el-dropdown-menu>
-        </el-dropdown>
-
-
-
-        <el-table stripe :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
-                  border height="700" :header-cell-style="{background:'#eff3f6'}">
-            <el-table-column type="index" label="序号" align="center"></el-table-column>
-            <el-table-column
-                    prop="date"
-                    label="日期"
-                    width="180">
-            </el-table-column>
-            <el-table-column
-                    prop="name"
-                    label="姓名"
-                    width="180">
-            </el-table-column>
-            <el-table-column
-                    prop="address"
-                    label="地址">
-            </el-table-column>
+        <!--用户列表-->
+        <el-table :data="eleList" border stripe>
+            <el-table-column type="index"></el-table-column><!--索引列-->
+            <el-table-column label="电压" prop="dy"></el-table-column>
+            <el-table-column label="电流" prop="dl"></el-table-column>
+            <el-table-column label="时间" prop="time"></el-table-column>
         </el-table>
 
-        <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page="currentPage"
-                :page-sizes="[10, 20, 30, 40, 50]"
-                :page-size="pagesize"
-                :total="tableData.length"
-                layout="total, sizes, prev, pager, next, jumper">
-        </el-pagination>
+
+        <!-- 分页 size-change改变每页记录数 current-change跳转到第几页 layout功能组件-->
+        <div>
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page="queryInfo.pageNum"
+                    :page-sizes="[1, 2, 5, 100]"
+                    :page-size="queryInfo.pageSize"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="total"
+            ></el-pagination>
+
+        </div>
+
 
 
     </div>
@@ -82,35 +42,38 @@
         name: "AC",
         data() {
             return {
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1519 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }],
-                currentPage:1,  //默认开始页面
-                pagesize:2,  //每页的条数
+                queryInfo: {
+                    query:"",//查询信息
+                    pageNum: 1,//当前页
+                    pageSize:5,//每页最大数
+                },
+                eleList:[],//电流电压列表
+                total:0,//总记录数
             }
         },
-
+        created() {
+            this.getEleList();
+        },
         methods:{
-            indexMethod(index){
-                return index+1;
+          //获取电流电压数据
+            async getEleList(){
+                // 调用post请求
+                const { data: res } = await this.$http.get("allEle", {
+                    params: this.queryInfo
+                });
+                this.eleList = res.data; // 电压电流数据封装
+                this.total = res.number; // 总记录数封装
             },
-            handleCurrentChange:function(currentPage){
-                this.currentPage = currentPage;
+            //最大数
+            handleSizeChange(newSize){
+                this.queryInfo.pageSize = newSize;
+                this.getEleList();
             },
+            //pageNum的触发动作
+            handleCurrentChange(newPage){
+                this.queryInfo.pageNum = newPage;
+                this.getEleList();
+            }
         }
     }
 

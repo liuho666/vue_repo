@@ -89,7 +89,7 @@
        <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
         <!-- 用户名 -->
         <el-form-item label="用户名" prop="username">
-          <el-input v-model="editForm.username" disabled></el-input>
+          <el-input v-model="editForm.username" disabled></el-input> <!-- disabled 只是展示用 -->
         </el-form-item>
         <!-- 密码 -->
         <el-form-item label="密码" prop="password">
@@ -120,7 +120,7 @@ export default {
       userlist: [],// 用户列表
      
       total: 0, // 总记录数
-      addDialogVisible: false ,// 对话框显示
+      addDialogVisible: false ,// 对话框显示切换
       // 添加用户表单项
       addForm: {
         username:'',
@@ -143,7 +143,7 @@ export default {
         ],
         email:[
            { required: true, message: "请输入邮箱", trigger: "blur" },
-          { min: 5, max: 15, message: "请输入正确邮箱地址", trigger: "blur" }
+          { min: 5, max: 25, message: "请输入正确邮箱地址", trigger: "blur" }
         ],
       },
       // 修改用户表单验证规则
@@ -154,7 +154,7 @@ export default {
           ],
           email:[
            { required: true, message: "请输入邮箱", trigger: "blur" },
-           { min: 5, max: 15, message: "请输入正确邮箱地址", trigger: "blur" }
+           { min: 5, max: 25, message: "请输入正确邮箱地址", trigger: "blur" }
           ],
       },
     };
@@ -223,8 +223,8 @@ export default {
         // }
         // this.$message.success("操作成功！！！");
 
-        this.editForm = res;
-        this.editDialogVisible = true;
+        this.editForm = res;//查询出用户信息反填回编辑表单
+        this.editDialogVisible = true;//开启编辑对话框
     },
     // 关闭窗口
     editDialogClosed(){
